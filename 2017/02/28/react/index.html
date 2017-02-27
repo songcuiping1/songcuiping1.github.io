@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>React基础 | 个人前端技术博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="React基础知识详解  除组件化、虚拟DOM在复用以及性能上带来的一般好处外，React思想使得开发者之间更好的分工与合作，在配合上非常顺畅，规范的接口以及极强的约束，使得整个代码结构清晰，不同开发者的代码高度一致。  提前明确几点：
+
+不支持 getInitialState 在设置组件初始的 state ，可在组件的 constructor 中通过 this.state 设置，也可直接作为 p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React基础">
+<meta property="og:url" content="http://yoursite.com/2017/02/28/react/index.html">
+<meta property="og:site_name" content="个人前端技术博客">
+<meta property="og:description" content="React基础知识详解  除组件化、虚拟DOM在复用以及性能上带来的一般好处外，React思想使得开发者之间更好的分工与合作，在配合上非常顺畅，规范的接口以及极强的约束，使得整个代码结构清晰，不同开发者的代码高度一致。  提前明确几点：
+
+不支持 getInitialState 在设置组件初始的 state ，可在组件的 constructor 中通过 this.state 设置，也可直接作为 p">
+<meta property="og:updated_time" content="2017-02-27T16:07:21.390Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React基础">
+<meta name="twitter:description" content="React基础知识详解  除组件化、虚拟DOM在复用以及性能上带来的一般好处外，React思想使得开发者之间更好的分工与合作，在配合上非常顺畅，规范的接口以及极强的约束，使得整个代码结构清晰，不同开发者的代码高度一致。  提前明确几点：
+
+不支持 getInitialState 在设置组件初始的 state ，可在组件的 constructor 中通过 this.state 设置，也可直接作为 p">
+  
+    <link rel="alternate" href="/atom.xml" title="个人前端技术博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">个人前端技术博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-react" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/28/react/" class="article-date">
+  <time datetime="2017-02-27T16:07:21.390Z" itemprop="datePublished">2017-02-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      React基础
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="React基础知识详解"><a href="#React基础知识详解" class="headerlink" title="React基础知识详解"></a>React基础知识详解</h1><p>  除组件化、虚拟DOM在复用以及性能上带来的一般好处外，React思想使得开发者之间更好的分工与合作，在配合上非常顺畅，规范的接口以及极强的约束，使得整个代码结构清晰，不同开发者的代码高度一致。<br>  提前明确几点：</p>
+<ul>
+<li>不支持 getInitialState 在设置组件初始的 state ，可在组件的 constructor 中通过 this.state 设置，也可直接作为 properties 定义</li>
+<li>propTypes、defaultProps 作为 properties 定义，也可在组件外部通过键值对方式设置。</li>
+<li>不支持 mixins，可以使用高阶组件写法，或者 decorator。</li>
+</ul>
+<h2 id="1-顶层API"><a href="#1-顶层API" class="headerlink" title="1.顶层API"></a>1.顶层API</h2><p>最简单的React组件及其渲染</p>
+<blockquote>
+<p>import React, { Component } from ‘react’;</p>
+</blockquote>
+<p>最简单的一个组件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class SimpleComponent extends Component &#123;</div><div class="line">  render()&#123;</div><div class="line">    return &lt;div&gt; here we go &lt;/div&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>// 我们可以看看React给我们提供了哪些顶层组件</p>
+<p>console.log( React );<br>export default SimpleComponent;</p>
+<blockquote>
+<ul>
+<li>react.js</li>
+</ul>
+<p>React.Children: Object<br>React.Component: ReactComponent(props, context, updater)<br>React.DOM: Object<br>React.PropTypes: Object<br>React.cloneElement: (element, props, children)<br>React.createClass: (spec)<br>React.createElement: (type, props, children)<br>React.createFactory: (type)<br>React.createMixin: (mixin)<br>React.isValidElement: (object)</p>
+<ul>
+<li>Component API</li>
+</ul>
+</blockquote>
+<p>this.context: Object<br>this.props: Object<br>this.refs: Object<br>this.state: Object<br>this.setState: Object</p>
+<blockquote>
+<ul>
+<li><p>react-dom.js<br>ReactDOM.findDOMNode: findDOMNode(componentOrElement)<br>ReactDOM.render: ()<br>ReactDOM.unmountComponentAtNode: (container)</p>
+</li>
+<li><p>react-dom-server.js</p>
+</li>
+</ul>
+</blockquote>
+<p>ReactDOMServer.renderToString<br>ReactDOMServer.renderToStaticMarkup</p>
+<h2 id="2-jsx语法"><a href="#2-jsx语法" class="headerlink" title="2. jsx语法"></a>2. jsx语法</h2><p>类似 xml 的语法，用来描述组件树<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div classname=&quot;x&quot;&gt;</div><div class="line">  &lt;a href=&quot;#&quot;&gt;#&lt;/a&gt;</div><div class="line">    &lt;component x=&quot;y&quot;&gt;1&lt;/component&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>不用JSX，用React提供的API写的话<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">React.createElement(&apos;div&apos;,&#123;</div><div class="line">  className:&apos;x&apos;</div><div class="line">    &#125;,[</div><div class="line">    React.createElement(&apos;a&apos;,&#123;href:&apos;#&apos;&#125;,&apos;#&apos;),</div><div class="line">    React.createElement(Component,&#123;x:&apos;y&apos;&#125;,1);</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<h3 id="2-1-注释、命名、根元素个数、JSX-嵌入变量"><a href="#2-1-注释、命名、根元素个数、JSX-嵌入变量" class="headerlink" title="2.1 注释、命名、根元素个数、JSX 嵌入变量"></a>2.1 注释、命名、根元素个数、JSX 嵌入变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line"></div><div class="line">// 1. 组件命名遵循驼峰命名，首字母大写</div><div class="line">class ComponentDemo extends Component &#123;</div><div class="line">  render()&#123;</div><div class="line">    &#123;</div><div class="line">      /*</div><div class="line">      2. 这是代码注释</div><div class="line">      也可以是多行</div><div class="line">      */</div><div class="line">    &#125;</div><div class="line">    const name = this.props.name;</div><div class="line"></div><div class="line">    // 3. render 方法 return 回来的根元素只能是一个，超过会报错</div><div class="line">    // 4. &#123; &#125; 里面可以写JS代码</div><div class="line">    return (</div><div class="line">      &lt;div&gt;</div><div class="line">        hello, &#123;name ? name : &quot;我是默认的&quot;&#125;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default ComponentDemo;</div></pre></td></tr></table></figure>
+<p>React只有一个限制， 组件只能渲染单个根节点。如果你想要返回多个节点，它们必须被包含在同一个节点里。</p>
+<h3 id="2-2-styles"><a href="#2-2-styles" class="headerlink" title="2.2 styles"></a>2.2 styles</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line"></div><div class="line">class StyleDemo extends Component &#123;</div><div class="line">  render()&#123;</div><div class="line">    // 5. 在JS文件里面给组件定义样式</div><div class="line">    var MyComponentStyles = &#123;</div><div class="line">        color: &apos;blue&apos;,</div><div class="line">        fontSize: &apos;28px&apos;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    return (</div><div class="line">      &lt;div style=&#123;MyComponentStyles&#125;&gt;</div><div class="line">          可以直接这样写行内样式</div><div class="line">      &lt;/div&gt;</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default StyleDemo;</div></pre></td></tr></table></figure>
+<h3 id="2-3-JSX-SPREAD"><a href="#2-3-JSX-SPREAD" class="headerlink" title="2.3 JSX SPREAD"></a>2.3 JSX SPREAD</h3><p>可以用通过 {…obj} 来批量设置一个对象的键值对到组件的属性，注意顺序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line"></div><div class="line">class SpreadDemo extends Component &#123;</div><div class="line">  componentWillMount()&#123;</div><div class="line">    console.log(this.props);</div><div class="line">  &#125;</div><div class="line">  render()&#123;</div><div class="line">    return &lt;h1&gt; &#123;this.props.name&#125; is a &#123;this.props.type&#125; &lt;/h1&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default SpreadDemo;</div></pre></td></tr></table></figure></p>
+<h3 id="2-4-属性名不能和-js-关键字冲突"><a href="#2-4-属性名不能和-js-关键字冲突" class="headerlink" title="2.4 属性名不能和 js 关键字冲突"></a>2.4 属性名不能和 js 关键字冲突</h3><p>例如：className, readOnly, htmlfor</p>
+<p>##3. 数据流：state props propType</p>
+<h3 id="3-1-state-amp-amp-setState"><a href="#3-1-state-amp-amp-setState" class="headerlink" title="3.1 state &amp;&amp; setState"></a>3.1 state &amp;&amp; setState</h3><p>  用状态控制组件变化 可以把一个组件看做一个状态机, 每一次状态对应于组件的一个 ui</p>
+<p>  组件内部的状态，可以使用 state<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line"></div><div class="line">class StateDemo extends Component &#123;</div><div class="line"></div><div class="line">  state = &#123;</div><div class="line">    secondsElapsed: 0</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  tick()&#123;</div><div class="line">    this.setState(&#123; secondsElapsed: this.state.secondsElapsed + 1 &#125;);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  componentDidMount()&#123;</div><div class="line">    this.interval = setInterval( this.tick.bind(this), 1000 );</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  componentWillUnmount()&#123;</div><div class="line">    clearInterval(this.interval);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render()&#123;</div><div class="line">    return (</div><div class="line">      &lt;div&gt;目前已经计时：&#123;this.state.secondsElapsed&#125;秒&lt;/div&gt;</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default StateDemo;</div></pre></td></tr></table></figure></p>
+<h3 id="3-2-props"><a href="#3-2-props" class="headerlink" title="3.2 props"></a>3.2 props</h3><p>  通过 this.props 可以获取传递给该组件的属性值，还可以通过定义 getDefaultProps 来指定默认属性值（这是ES5的写法，ES6定义组件的默认props可以直接写props）</p>
+<p>  下面几个是props的常用API：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">this.props.children</div><div class="line">this.props.map</div><div class="line">this.props.filter</div><div class="line">props是调用组件的时候传递进去的数据，一般用于组件树数据传递</div><div class="line"></div><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line"></div><div class="line">class PropsDemo extends Component &#123;</div><div class="line">  props = &#123;</div><div class="line">    title: &apos;这是默认的title属性值&apos;</div><div class="line">  &#125;</div><div class="line">  render()&#123;</div><div class="line">    console.log(this.props);</div><div class="line"></div><div class="line">    return &lt;b&gt;&#123;this.props.title&#125;&lt;/b&gt;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default PropsDemo;</div></pre></td></tr></table></figure></p>
+<p>  // 组件调用方式<br>  // <propsdemo title="设置的标题"></propsdemo></p>
+<h3 id="3-3-propTypes"><a href="#3-3-propTypes" class="headerlink" title="3.3 propTypes"></a>3.3 propTypes</h3><p>  通过指定 propTypes 可以校验props属性值的类型，校验可提升开发者体验，用于约定统一的接口规范。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component, PropTypes &#125; from &apos;react&apos;;</div><div class="line"></div><div class="line">class PropTypesDemo extends Component &#123;</div><div class="line"></div><div class="line">  static propTypes = &#123;</div><div class="line">    title: PropTypes.string.isRequired</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  props = &#123;</div><div class="line">      title: &apos;默认的title&apos;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render()&#123;</div><div class="line">    return &lt;b&gt;&#123;this.props.title&#125;&lt;/b&gt;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default PropTypesDemo;</div></pre></td></tr></table></figure></p>
+<h2 id="4-调用API定义组件"><a href="#4-调用API定义组件" class="headerlink" title="4. 调用API定义组件"></a>4. 调用API定义组件</h2><pre><code>用 React.createClass或者React.Component 定义组件时允许传入相应的配置及组件API的使用，包括组件生命周期提供的一系列钩子函数。
+</code></pre><h3 id="4-1-组件初始定义"><a href="#4-1-组件初始定义" class="headerlink" title="4.1 组件初始定义"></a>4.1 组件初始定义</h3><pre><code>getDefaultProps 得到默认属性对象，这个在ES6的时候不需要这样定义
+propTypes 属性检验规则
+mixins 组件间公用方法
+</code></pre><h3 id="4-2-初次创建组件时调用"><a href="#4-2-初次创建组件时调用" class="headerlink" title="4.2 初次创建组件时调用"></a>4.2 初次创建组件时调用</h3><pre><code>getInitialState 得到初始状态对象
+render 返回组件树. 必须设置
+componentDidMount 渲染到 dom 树中是调用，只在客户端调用，可用于获取原生节点
+</code></pre><h3 id="4-3-组件的属性值改变时调用"><a href="#4-3-组件的属性值改变时调用" class="headerlink" title="4.3 组件的属性值改变时调用"></a>4.3 组件的属性值改变时调用</h3><pre><code>componentWillReceiveProps 属性改变调用
+shouldComponentUpdate 判断是否需要重新渲染
+render 返回组件树. 必须设置
+componentDidUpdate 渲染到 dom 树中是调用, 可用于获取原生节点
+</code></pre><h3 id="4-4-销毁组件"><a href="#4-4-销毁组件" class="headerlink" title="4.4 销毁组件"></a>4.4 销毁组件</h3><pre><code>componentWillUnmount 组件从 dom 销毁前调用
+</code></pre><h3 id="4-5-示例诠释组件全生命周期"><a href="#4-5-示例诠释组件全生命周期" class="headerlink" title="4.5 示例诠释组件全生命周期"></a>4.5 示例诠释组件全生命周期</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"> import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line">    class LifeCycle extends Component &#123;</div><div class="line"></div><div class="line">      Props = &#123;</div><div class="line">        value: &apos;开始渲染&apos;</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      componentWillReceiveProps(nextProps)&#123;</div><div class="line">        console.log(&apos;componentWillReceiveProps&apos;);</div><div class="line">        this.setState(&#123;</div><div class="line">            value: nextProps.value</div><div class="line">        &#125;);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      shouldComponentUpdate(nextProps,nextState)&#123;</div><div class="line">        console.log(&apos;shouldComponentUpdate&apos;);</div><div class="line">        return true;</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      componentWillUpdate(nextProps,nextState)&#123;</div><div class="line">        console.log(&apos;componentWillUpdate&apos;);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      componentWillMount()&#123;</div><div class="line">        console.log(&apos;componentWillMount&apos;);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      render() &#123;</div><div class="line">        console.log(&apos;render&apos;);</div><div class="line">        return &lt;span&gt;&#123;this.props.value&#125;&lt;/span&gt;</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      componentDidMount() &#123;</div><div class="line">          console.log(&apos;componentDidMount&apos;);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      componentDidUpdate(prevProps,prevState) &#123;</div><div class="line">          console.log(&apos;componentDidUpdate&apos;);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      componentWillUnmount(prevProps,prevState) &#123;</div><div class="line">          console.log(&apos;componentWillUnmount&apos;);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    export default LifeCycle;</div><div class="line">```    </div><div class="line">    调用组件并销毁组件示例</div></pre></td></tr></table></figure>
+<pre><code>import React, { Component } from &apos;react&apos;;
+import LifeCycleDemo from &apos;./LifeCycleDemo&apos;;
+
+class DestroyComponent extends Component {
+
+  state = {
+    value:1,
+    destroyed:false
+  }
+
+  increase = () =&gt; {
+    this.setState({
+      value: this.state.value + 1
+    });
+  }
+
+  destroy = () =&gt; {
+    this.setState({
+      destroyed: true
+    });
+  }
+
+  render() {
+    if(this.state.destroyed){
+        return null;
+    }
+
+    return &lt;div&gt;
+      &lt;p&gt;
+        &lt;button onClick={this.increase}&gt;每次加1&lt;/button&gt;
+        &lt;button onClick={this.destroy}&gt;干掉这两个按钮&lt;/button&gt;
+      &lt;/p&gt;
+      &lt;LifeCycleDemo value={this.state.value}/&gt;
+    &lt;/div&gt;;
+  }
+}
+
+export default DestroyComponent;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">###  4.6 回顾组件的渲染过程</div><div class="line">    # 创建-》渲染-》销毁</div></pre></td></tr></table></figure>
+<pre><code>getDefaultProps()
+getInitialState()
+componentWillMount()
+render()
+componentDidMount()
+componentWillUnmount()
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># 更新组件</div></pre></td></tr></table></figure>
+<pre><code>componentWillReceiveProps()
+shouldComponentUpdate()
+componentWillUpdate()
+render()
+componentDidUpdate()
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">##  5. 使用ref对操作DOM</div><div class="line">    ReactDOM.findDOMNode</div></pre></td></tr></table></figure>
+<pre><code>this.refs.xxx
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">获取DOM后可以方便结合现有非 react 类库的使用，通过 ref/refs 可以取得组件实例，进而取得原生节点，不过尽量通过 state/props 更新组件，不要使用该功能去更新组件的DOM。</div></pre></td></tr></table></figure>
+<pre><code>import React, { Component } from &apos;react&apos;;
+import ReactDOM, { findDOMNode } from &apos;react-dom&apos;;
+
+class HandleDOMComponent extends Component {
+  componentDidMount(){
+    // 两种方式都可以获取到元素
+    let ele = findDOMNode(this.refs.content);
+    let ele2 = this.refs.content;
+
+    // 如果想用 jquery，那么这是个好时机
+    console.log( ele );
+    console.log( ele.innerHTML );
+    console.log( ele2.innerHTML );
+
+  }
+
+  render(){
+    return (
+      &lt;div&gt;
+        &lt;h3&gt;来吧，一起操作DOM&lt;/h3&gt;
+        &lt;div ref=&apos;content&apos;&gt;这是我DOM元素里面的内容&lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default HandleDOMComponent;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">再看一个有趣的例子</div></pre></td></tr></table></figure>
+<pre><code>import React, { Component } from &apos;react&apos;;
+import { findDOMNode } from &apos;react-dom&apos;;
+class Refs extends Component {
+  state = {
+    red: 0,
+    green: 0,
+    pink: 0
+  }
+  update = (e) =&gt; {
+    this.setState({
+      red: findDOMNode(this.refs.red).value,
+      green: findDOMNode(this.refs.green).value,
+      pink: findDOMNode(this.refs.pink).value
+    })
+  }
+  render(){
+    return (
+      &lt;div&gt;
+        &lt;Slider ref=&quot;red&quot; update={this.update} /&gt;
+        {this.state.red}
+        &lt;br /&gt;
+        &lt;Slider ref=&quot;green&quot; update={this.update} /&gt;
+        {this.state.green}
+        &lt;br /&gt;
+        &lt;Slider ref=&quot;pink&quot; update={this.update} /&gt;
+        {this.state.pink}
+      &lt;/div&gt;
+    )
+  }
+}
+
+class Slider extends Component {
+  render(){
+    return (
+        &lt;input type=&quot;range&quot;
+          min=&quot;0&quot;
+          max=&quot;255&quot;
+          onChange={this.props.update} /&gt;
+    )
+  }
+
+}
+
+export default Refs;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">## 6. 事件event</div><div class="line">    可以通过设置原生 dom 组件的 onEventType 属性来监听 dom 事件，例如 onClick, onMouseDown，在加强组件内聚性的同时，避免了传统 html 的全局变量污染</div></pre></td></tr></table></figure>
+<pre><code>&apos;use strict&apos;;
+
+import React, { Component } from &apos;react&apos;;
+
+class HandleEvent extends Component {
+
+  state = { liked: false }
+
+  handleClick = (event) =&gt; {
+    this.setState({liked: !this.state.liked});
+  }
+
+  render() {
+    let text = this.state.liked ? &apos;喜欢&apos; : &apos;不喜欢&apos;;
+
+    return (
+      &lt;p onClick={this.handleClick}&gt;
+        我 {text} 你.
+      &lt;/p&gt;
+    );
+  }
+}
+
+export default HandleEvent;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">    注意：事件回调函数参数为标准化的事件对象，可以不用考虑 IE</div><div class="line"></div><div class="line">    更多事件我们可以一起看这里</div><div class="line"></div><div class="line">## 7. 组件的组合</div><div class="line">### 7.1 受限组件 &amp;&amp; 非受限组件</div><div class="line">    受限组件示例：</div></pre></td></tr></table></figure>
+
+render() {
+  return &lt;input type=&quot;text&quot; value=&quot;Hello!&quot; /&gt;;
+}
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">非受限组件示例：</div></pre></td></tr></table></figure>
+<pre><code>render() {
+  return &lt;input type=&quot;text&quot; /&gt;;
+}
+###  7.2 使用自定义的组件
+&apos;use strict&apos;;
+
+import React, { Component } from &apos;react&apos;;
+
+class ComponentA extends Component {
+  render() {
+    return &lt;a href=&apos;#&apos;&gt;我是组件A&lt;br/&gt;&lt;/a&gt;
+  }
+}
+
+class ComponentB extends Component {
+  render() {
+    return &lt;a href=&apos;#&apos;&gt;我是组件B&lt;/a&gt;
+  }
+}
+
+
+class SelfCreateComponent extends Component {
+  render() {
+    return (
+      &lt;i&gt;
+        &lt;ComponentA /&gt;
+        &lt;ComponentB /&gt;
+      &lt;/i&gt;
+    );
+  }
+}
+
+export default SelfCreateComponent;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">###  7.3 组合 CHILDREN</div><div class="line">    自定义组件中可以通过 this.props.children 访问自定义组件的子节点</div></pre></td></tr></table></figure>
+<pre><code>&apos;use strict&apos;;
+
+import React, { Component } from &apos;react&apos;;
+
+// 定义一个组件，通过React.Children 拿到组件里面的子元素
+class ListComponent extends Component {
+  render(){
+    return &lt;ul&gt;
+      {
+        React.Children.map( this.props.children, function(c){
+          return &lt;li&gt;{c}&lt;/li&gt;;
+        })
+      }
+    &lt;/ul&gt;
+  }
+}
+
+class UseChildrenComponent extends Component {
+  render(){
+    return (
+      &lt;ListComponent&gt;
+        &lt;a href=&quot;#&quot;&gt;Facebook&lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;Google&lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;SpaceX&lt;/a&gt;
+      &lt;/ListComponent&gt;
+    )
+  }
+}
+
+export default UseChildrenComponent;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">## 8. form表单操作</div><div class="line">### 8.1 React表单组件和 html 的不同点</div><div class="line">    value/checked 属性设置后，用户输入无效</div><div class="line">    textarea 的值要设置在 value 属性</div><div class="line">    &lt;textarea name=&quot;description&quot; value=&quot;This is a description.&quot; /&gt;</div><div class="line">    select 的 value 属性可以是数组，不建议使用 option 的 selected 属性</div><div class="line">    &lt;select multiple=&#123;true&#125; value=&#123;[&apos;B&apos;, &apos;C&apos;]&#125;&gt;</div><div class="line">     &lt;option value=&quot;A&quot;&gt;Apple&lt;/option&gt;</div><div class="line">     &lt;option value=&quot;B&quot;&gt;Banana&lt;/option&gt;</div><div class="line">     &lt;option value=&quot;C&quot;&gt;Cranberry&lt;/option&gt;</div><div class="line">    &lt;/select&gt;</div><div class="line">    input/textarea 的 onChange 用户每次输入都会触发（即使不失去焦点）</div><div class="line">    radio/checkbox/option 点击后触发 onChange</div><div class="line">###  8.2 综合表达组件示例</div><div class="line">- 1.定义复选框组件Checkboxes</div><div class="line"></div><div class="line">```  </div><div class="line">  import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line"></div><div class="line">    class Checkboxes extends Component &#123;</div><div class="line">      render()&#123;</div><div class="line">          return &lt;span&gt;</div><div class="line">              A</div><div class="line">              &lt;input onChange=&#123;this.props.handleCheck&#125;  name=&quot;goodCheckbox&quot; type=&quot;checkbox&quot; value=&quot;A&quot;/&gt;</div><div class="line">              B</div><div class="line">              &lt;input onChange=&#123;this.props.handleCheck&#125; name=&quot;goodCheckbox&quot; type=&quot;checkbox&quot; value=&quot;B&quot; /&gt;</div><div class="line">              C</div><div class="line">              &lt;input onChange=&#123;this.props.handleCheck&#125; name=&quot;goodCheckbox&quot; type=&quot;checkbox&quot; value=&quot;C&quot; /&gt;</div><div class="line">          &lt;/span&gt;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    export default Checkboxes;</div></pre></td></tr></table></figure>
+<ul>
+<li>2.定义单选框按钮组RadioButtons</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line">class RadioButtons extends Component &#123;</div><div class="line">  saySomething()&#123;</div><div class="line">      alert(&quot;我是一个很棒的单选框按钮组&quot;);</div><div class="line">  &#125;</div><div class="line">  render()&#123;</div><div class="line">      return &lt;span&gt;</div><div class="line">          A</div><div class="line">          &lt;input onChange=&#123;this.props.handleRadio&#125; name=&quot;goodRadio&quot; type=&quot;radio&quot; value=&quot;A&quot;/&gt;</div><div class="line">          B</div><div class="line">          &lt;input onChange=&#123;this.props.handleRadio&#125; name=&quot;goodRadio&quot; type=&quot;radio&quot; defaultChecked value=&quot;B&quot;/&gt;</div><div class="line">          C</div><div class="line">          &lt;input onChange=&#123;this.props.handleRadio&#125; name=&quot;goodRadio&quot; type=&quot;radio&quot; value=&quot;C&quot;/&gt;</div><div class="line">      &lt;/span&gt;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default RadioButtons;</div></pre></td></tr></table></figure>
+<ul>
+<li>3.FormApp组件集成两个组件并处理表单逻辑</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line">&apos;use strict&apos;;</div><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line">import Checkboxes from &apos;./Checkboxes&apos;;</div><div class="line">import RadioButtons from &apos;./RadioButtons&apos;;</div><div class="line">class FormApp extends Component &#123;</div><div class="line">  state = &#123;</div><div class="line">      inputValue: &apos;请输入...&apos;,</div><div class="line">      selectValue: &apos;A&apos;,</div><div class="line">      radioValue:&apos;B&apos;,</div><div class="line">      checkValues:[],</div><div class="line">      textareaValue:&apos;请输入...&apos;</div><div class="line">  &#125;</div><div class="line">  handleSubmit = (e) =&gt; &#123;</div><div class="line">      e.preventDefault();</div><div class="line">      let formData = &#123;</div><div class="line">          input: this.refs.goodInput.value,</div><div class="line">          select: this.refs.goodSelect.value,</div><div class="line">          textarea: this.refs.goodTextarea.value,</div><div class="line">          radio: this.state.radioValue,</div><div class="line">          check: this.state.checkValues,</div><div class="line">      &#125;</div><div class="line">      alert(&apos;您即将提交表单&apos;)</div><div class="line">      console.log(&apos;你提交的数据是:&apos;)</div><div class="line">      console.log(formData);</div><div class="line">  &#125;</div><div class="line">  handleRadio = (e) =&gt; &#123;</div><div class="line">      this.setState(&#123;</div><div class="line">          radioValue: e.target.value,</div><div class="line">      &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  handleCheck = (e) =&gt; &#123;</div><div class="line">      let checkValues = this.state.checkValues.slice();</div><div class="line">      let newVal = e.target.value;</div><div class="line">      let index = checkValues.indexOf(newVal);</div><div class="line"></div><div class="line">      if( index == -1 )&#123;</div><div class="line">          checkValues.push( newVal )</div><div class="line">      &#125;else&#123;</div><div class="line">          checkValues.splice(index,1);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      this.setState(&#123;</div><div class="line">          checkValues: checkValues,</div><div class="line">      &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render()&#123;</div><div class="line">      return &lt;form onSubmit=&#123;this.handleSubmit&#125;&gt;</div><div class="line">          &lt;h3&gt; 请输入内容 &lt;/h3&gt;</div><div class="line">          &lt;input ref=&quot;goodInput&quot; type=&quot;text&quot; defaultValue=&#123;this.state.inputValue &#125;/&gt;</div><div class="line">          &lt;br/&gt;</div><div class="line"></div><div class="line">          &lt;h3&gt; 请选择 &lt;/h3&gt;</div><div class="line">          &lt;select defaultValue=&#123; this.state.selectValue &#125; ref=&quot;goodSelect&quot;&gt;</div><div class="line">              &lt;option value=&quot;A&quot;&gt;A&lt;/option&gt;</div><div class="line">              &lt;option value=&quot;B&quot;&gt;B&lt;/option&gt;</div><div class="line">              &lt;option value=&quot;C&quot;&gt;C&lt;/option&gt;</div><div class="line">              &lt;option value=&quot;D&quot;&gt;D&lt;/option&gt;</div><div class="line">              &lt;option value=&quot;E&quot;&gt;E&lt;/option&gt;</div><div class="line">          &lt;/select&gt;</div><div class="line">          &lt;br/&gt;</div><div class="line"></div><div class="line">          &lt;h3&gt; 单项选择 &lt;/h3&gt;</div><div class="line">          &lt;RadioButtons ref=&quot;goodRadio&quot; handleRadio=&#123;this.handleRadio&#125; /&gt;</div><div class="line">          &lt;br/&gt;</div><div class="line"></div><div class="line">          &lt;h3&gt; 多选按钮 &lt;/h3&gt;</div><div class="line">          &lt;Checkboxes handleCheck=&#123;this.handleCheck&#125; /&gt;</div><div class="line">          &lt;br/&gt;</div><div class="line"></div><div class="line">          &lt;h3&gt; 反馈建议 &lt;/h3&gt;</div><div class="line">          &lt;textarea defaultValue=&#123;this.state.textareaValue&#125; ref=&quot;goodTextarea&quot;&gt;&lt;/textarea&gt;</div><div class="line">          &lt;br/&gt;</div><div class="line"></div><div class="line">          &lt;button type=&quot;submit&quot;&gt;确认提交&lt;/button&gt;</div><div class="line">      &lt;/form&gt;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default FormApp;</div></pre></td></tr></table></figure>
+<h2 id="9-mixin共享"><a href="#9-mixin共享" class="headerlink" title="9. mixin共享"></a>9. mixin共享</h2><pre><code>mixin 是一个普通对象，通过 mixin 可以在不同组件间共享代码，使你的React程序变得更为可重用。
+注意，ES6语法不支持mixin写法，而是可以通过decorator去实现代码共享，这里使用ES5语法做示例说明。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line"></div><div class="line">var SetIntervalMixin = &#123;</div><div class="line">  componentWillMount: function() &#123;</div><div class="line">    this.intervals = [];</div><div class="line">  &#125;,</div><div class="line">  setInterval: function() &#123;</div><div class="line">    this.intervals.push(setInterval.apply(null, arguments));</div><div class="line">  &#125;,</div><div class="line">  componentWillUnmount: function() &#123;</div><div class="line">    this.intervals.forEach(clearInterval);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">var MixinDemo = React.createClass(&#123;</div><div class="line">  // Use the mixin</div><div class="line">  mixins: [SetIntervalMixin],</div><div class="line">  getInitialState: function() &#123;</div><div class="line">    return &#123;seconds: 0&#125;;</div><div class="line">  &#125;,</div><div class="line">  componentDidMount: function() &#123;</div><div class="line">    // Call a method on the mixin</div><div class="line">    this.setInterval(this.tick, 1000);</div><div class="line">  &#125;,</div><div class="line">  tick: function() &#123;</div><div class="line">    this.setState(&#123;seconds: this.state.seconds + 1&#125;);</div><div class="line">  &#125;,</div><div class="line">  render: function() &#123;</div><div class="line">    return (</div><div class="line">      &lt;p&gt;</div><div class="line">        计时器已经运行了： &#123;this.state.seconds&#125; 秒.</div><div class="line">      &lt;/p&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<pre><code>export default MixinDemo;
+那么，接下来，我们用high-order component的方式来实现mixin：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line"></div><div class="line">let Mixin = MixinComponent =&gt; class extends Component &#123;</div><div class="line">  constructor() &#123;</div><div class="line">    super();</div><div class="line">    this.state = &#123; val: 0 &#125;;</div><div class="line">    this.update = this.update.bind(this);</div><div class="line">  &#125;</div><div class="line">  update()&#123;</div><div class="line">    this.setState(&#123;val: this.state.val + 1&#125;);</div><div class="line">  &#125;</div><div class="line">  componentWillMount()&#123;</div><div class="line">    console.log(&apos;will mount...&apos;)</div><div class="line">  &#125;</div><div class="line">  render()&#123;</div><div class="line">    return (</div><div class="line">      &lt;MixinComponent</div><div class="line">        update=&#123;this.update&#125;</div><div class="line">        &#123;...this.state&#125;</div><div class="line">        &#123;...this.props&#125;</div><div class="line">       /&gt;</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">  componentDidMount()&#123;</div><div class="line">    console.log(&apos;mounted...&apos;)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">const Button = (props) =&gt; &#123;</div><div class="line">  return (</div><div class="line">    &lt;button onClick=&#123;props.update&#125;&gt;</div><div class="line">      &#123;props.txt&#125; - &#123;props.val&#125;</div><div class="line">    &lt;/button&gt;</div><div class="line">  )</div><div class="line">&#125;</div><div class="line"></div><div class="line">const Label = (props) =&gt; &#123;</div><div class="line">  return (</div><div class="line">    &lt;label onMouseMove=&#123;props.update&#125;&gt;</div><div class="line">      &#123;props.txt&#125; - &#123;props.val&#125;</div><div class="line">    &lt;/label&gt;</div><div class="line">  )</div><div class="line">&#125;</div><div class="line"></div><div class="line">let ButtonMixed = Mixin(Button);</div><div class="line">let LabelMixed = Mixin(Label);</div><div class="line"></div><div class="line">class Mixins extends Component &#123;</div><div class="line">  render()&#123;</div><div class="line">    return (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;ButtonMixed txt=&quot;button&quot; /&gt;</div><div class="line">        &lt;LabelMixed txt=&quot;label&quot; /&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default Mixins;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/28/react/" data-id="cizob5nfa00031suola269pg8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/28/each/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/27/reg/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/02/28/jQuery_ajax/">$.ajax()方法详解</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/28/each/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/28/react/">React基础</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/27/reg/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/20/vue/">轻型MVVM框架Vue.js</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 宋翠平<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

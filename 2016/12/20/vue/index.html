@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>轻型MVVM框架Vue.js | 个人前端技术博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="介绍Vue.js 是一个用于创建 web 交互界面的库。
+从技术角度讲，Vue.js 专注于 MVVM 模型的 ViewModel 层。它通过双向数据绑定把 View 层和 Model 层连接了起来。实际的 DOM 封装和输出格式都被抽象为了 Directives 和 Filters。
+从哲学角度讲，Vue 希望通过一个尽量简单的 API 来提供响应式的数据绑定和可组合、复用的视图组件。它不是一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="轻型MVVM框架Vue.js">
+<meta property="og:url" content="http://yoursite.com/2016/12/20/vue/index.html">
+<meta property="og:site_name" content="个人前端技术博客">
+<meta property="og:description" content="介绍Vue.js 是一个用于创建 web 交互界面的库。
+从技术角度讲，Vue.js 专注于 MVVM 模型的 ViewModel 层。它通过双向数据绑定把 View 层和 Model 层连接了起来。实际的 DOM 封装和输出格式都被抽象为了 Directives 和 Filters。
+从哲学角度讲，Vue 希望通过一个尽量简单的 API 来提供响应式的数据绑定和可组合、复用的视图组件。它不是一个">
+<meta property="og:updated_time" content="2017-02-27T16:31:11.979Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="轻型MVVM框架Vue.js">
+<meta name="twitter:description" content="介绍Vue.js 是一个用于创建 web 交互界面的库。
+从技术角度讲，Vue.js 专注于 MVVM 模型的 ViewModel 层。它通过双向数据绑定把 View 层和 Model 层连接了起来。实际的 DOM 封装和输出格式都被抽象为了 Directives 和 Filters。
+从哲学角度讲，Vue 希望通过一个尽量简单的 API 来提供响应式的数据绑定和可组合、复用的视图组件。它不是一个">
+  
+    <link rel="alternate" href="/atom.xml" title="个人前端技术博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">个人前端技术博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vue" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/20/vue/" class="article-date">
+  <time datetime="2016-12-20T10:41:51.000Z" itemprop="datePublished">2016-12-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      轻型MVVM框架Vue.js
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Vue.js 是一个用于创建 web 交互界面的库。</p>
+<p>从技术角度讲，Vue.js 专注于 MVVM 模型的 ViewModel 层。它通过双向数据绑定把 View 层和 Model 层连接了起来。实际的 DOM 封装和输出格式都被抽象为了 Directives 和 Filters。</p>
+<p>从哲学角度讲，Vue 希望通过一个尽量简单的 API 来提供响应式的数据绑定和可组合、复用的视图组件。它不是一个大而全的框架——它只是一个简单灵活的视图层。您可以独立使用它快速开发原型、也可以混合别的库做更多的事情。它同时和诸如 Firebase 这一类的 BaaS 服务有着天然的契合度。</p>
+<p>Vue.js 的 API 设计深受 AngularJS、KnockoutJS、Ractive.js 和 Rivets.js 的影响。尽管有不少相似之处，但我们相信 Vue.js 能够在简约和功能之间的微妙平衡中体现出其独有的价值。</p>
+<p>即便您已经熟悉了一些这类的库或框架，我们还是推荐您继续阅读接下来的概览，因为您对它们的认识也许和它们在 Vue.js 语境下的定义不尽相同。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li><p>CDN</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;https://raw.githubusercontent.com/yyx990803/vue/0.12.16/dist/vue.min.js&quot;&gt;&lt;script&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>npm</p>
+</li>
+<li>bower</li>
+</ul>
+<h2 id="概念综述"><a href="#概念综述" class="headerlink" title="概念综述"></a>概念综述</h2><h3 id="ViewModel"><a href="#ViewModel" class="headerlink" title="ViewModel"></a>ViewModel</h3><p>   一个同步 Model 和 View 的对象。在 Vue.js 中，每个 Vue 实例都是一个 ViewModel。它们是通过构造函数 Vue 或其子类被创建出来的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123; /* options */ &#125;)</div></pre></td></tr></table></figure>
+<p> 这是您作为一个开发者在使用 Vue.js 时主要打交道的对象。更多的细节请移步至 Vue 构造函数。</p>
+<h3 id="视图-View"><a href="#视图-View" class="headerlink" title="视图 View"></a>视图 View</h3><p> 被 Vue 实例管理的 DOM 节点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vm.$el // The View</div></pre></td></tr></table></figure>
+<p> Vue.js 使用基于 DOM 的模板。每个 Vue 实例都关联着一个相应的 DOM 元素。当一个 Vue 实例被创建时，它会递归遍历根元素的所有子结点，同时完成必要的数据绑定。当这个视图被编译之后，它就会自动响应数据的变化。</p>
+<p> 在使用 Vue.js 时，除了自定义指令 (稍后会有解释)，您几乎不必直接接触 DOM。当数据发生变化时，视图将会自动触发更新。这些更新的粒度精确到一个文字节点。同时为了更好的性能，这些更新是批量异步执行的。</p>
+<h3 id="模型-Model"><a href="#模型-Model" class="headerlink" title="模型 Model"></a>模型 Model</h3><p> 一个轻微改动过的原生 JavaScript 对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vm.$data // The Model</div></pre></td></tr></table></figure></p>
+<p> Vue.js 中的模型就是普通的 JavaScript 对象 —— 也可以称为数据对象。一旦某对象被作为 Vue 实例中的数据，它就成为一个 “响应式” 的对象了。你可以操作它们的属性，同时正在观察它的 Vue 实例也会收到提示。Vue.js 把数据对象的属性都转换成了 ES5 中的 getter/setters，以此达到无缝的数据观察效果：无需脏值检查，也不需要刻意给 Vue 任何更新视图的信号。每当数据变化时，视图都会在下一帧自动更新。</p>
+<p> Vue 实例代理了它们观察到的数据对象的所有属性。所以一旦一个对象 { a: 1 } 被观察，那么 vm.$data.a 和 vm.a 将会返回相同的值，而设置 vm.a = 2 则也会修改 vm.$data。</p>
+<p> 数据对象是被就地转化的，所以根据引用修改数据和修改 vm.$data 具有相同的效果。这也意味着多个 Vue 实例可以观察同一份数据。在较大型的应用程序中，我们也推荐将 Vue 实例作为纯粹的视图看待，同时把数据处理逻辑放在更独立的外部数据层。</p>
+<p> 值得提醒的是，一旦数据被观察，Vue.js 就不会再侦测到新加入或删除的属性了。作为弥补，我们会为被观察的对象增加 $add , $set和 $delete 方法。</p>
+<p> 下面是对 Vue.js 数据观测机制实现的高层概览：</p>
+<p> 数据观察</p>
+<h3 id="指令-Directives"><a href="#指令-Directives" class="headerlink" title="指令 Directives"></a>指令 Directives</h3><p> 带特殊前缀的 HTML 特性，可以让 Vue.js 对一个 DOM 元素做各种处理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div v-text=&quot;message&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p> 这里的 div 元素有一个 v-text 指令，其值为 message。Vue.js 会让该 div 的文本内容与 Vue 实例中的 message 属性值保持一致。</p>
+<p> Directives 可以封装任何 DOM 操作。比如 v-attr 会操作一个元素的特性；v-repeat 会基于数组来复制一个元素；v-on 会绑定事件等。稍后会有更多的介绍。</p>
+<p> Mustache 风格绑定</p>
+<p> 你也可以使用 mustache 风格的绑定，不管在文本中还是在属性中。它们在底层会被转换成 v-text 和 v-attr 的指令。比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;person-&#123;&#123;id&#125;&#125;&quot;&gt;Hello &#123;&#123;name&#125;&#125;!&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p> 这很方便，不过有一些注意事项：</p>
+<blockquote>
+<p>一个  的 src 属性在赋值时会产生一个 HTTP 请求，所以当模板在第一次被解析时会产生一个 404 请求。这种情况下更适合用 v-attr。</p>
+<p>Internet Explorer 在解析 HTML 时会移除非法的内联 style 属性，所以如果你想支持 IE，请在绑定内联 CSS 的时候始终使用 v-style。</p>
+<p>你可以使用三对花括号来回避 HTML 代码，而这种写法会在底层转换为 v-html：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#123; safeHTMLString &#125;&#125;&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>不过这种用法会留下 XSS 攻击的隐患，所以建议只对绝对信任的数据来源使用三对花括号的写法，或者先通过自定义的过滤器 (filter) 对不可信任的 HTML 进行过滤。</p>
+<p> 最后，你可以在你的 mustache 绑定里加入 * 来注明这是一个一次性撰写的数据，这样的话它就不会响应后续的数据变化：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;* onlyOnce &#125;&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>过滤器 Filters<br>过滤器是用于在更新视图之前处理原始值的函数。它们通过一个“管道”在指令或绑定中进行处理：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;&#123;&#123;message | capitalize&#125;&#125;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p> 这样在 div 的文本内容被更新之前，message 的值会先传给 capitalizie 函数处理。更多内容可移步至 深入了解过滤器 (Filters)。</p>
+<h3 id="组件-Components"><a href="#组件-Components" class="headerlink" title="组件 Components"></a>组件 Components</h3><p> Component Tree</p>
+<p> 在 Vue.js，每个组件都是一个简单的 Vue 实例。一个树形嵌套的各种组件就代表了你的应用程序的各种接口。通过 Vue.extend 返回的自定义构造函数可以把这些组件实例化，不过更推荐的声明式的用法是通过 Vue.component(id, constructor) 注册这些组件。一旦组件被注册，它们就可以在 Vue 实例的模板中以自定义元素形式使用了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;my-component&gt;</div><div class="line">  &lt;!-- internals handled by my-component --&gt;</div><div class="line">&lt;/my-component&gt;</div></pre></td></tr></table></figure></p>
+<p> 这个简单的机制使得我们可以以类似 Web Components 的声明形式对 Vue 组件进行复用和组合，同时无需最新版的浏览器或笨重的 polyfills。通过将一个应用程序拆分成简单的组件，代码库可以被尽可能的解耦，同时更易于维护。更多关于组件的内容，请移步至 组件系统。</p>
+<p> 简单示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;demo&quot;&gt;</div><div class="line">  &lt;h1&gt;&#123;&#123;title | uppercase&#125;&#125;&lt;/h1&gt;</div><div class="line">  &lt;ul&gt;</div><div class="line">    &lt;li</div><div class="line">      v-repeat=&quot;todos&quot;</div><div class="line">      v-on=&quot;click: done = !done&quot;</div><div class="line">      class=&quot;&#123;&#123;done ? &apos;done&apos; : &apos;&apos;&#125;&#125;&quot;&gt;</div><div class="line">      &#123;&#123;content&#125;&#125;</div><div class="line">    &lt;/li&gt;</div><div class="line">  &lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">var demo = new Vue(&#123;</div><div class="line">  el: &apos;#demo&apos;,</div><div class="line">  data: &#123;</div><div class="line">    title: &apos;todos&apos;,</div><div class="line">    todos: [</div><div class="line">      &#123;</div><div class="line">        done: true,</div><div class="line">        content: &apos;Learn JavaScript&apos;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        done: false,</div><div class="line">        content: &apos;Learn Vue.js&apos;</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/20/vue/" data-id="cizob5nfb00041suosnfbwrdx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/27/reg/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/02/20/first/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo博客搭建教程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/02/28/jQuery_ajax/">$.ajax()方法详解</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/28/each/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/28/react/">React基础</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/27/reg/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/20/vue/">轻型MVVM框架Vue.js</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 宋翠平<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
