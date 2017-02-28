@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,227 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-first" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/28/first/" class="article-date">
+  <time datetime="2017-02-28T03:18:10.648Z" itemprop="datePublished">2017-02-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/28/first/">Hexo博客搭建教程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Hexo博客搭建"><a href="#Hexo博客搭建" class="headerlink" title="Hexo博客搭建"></a>Hexo博客搭建</h1><p>   本文致力于提供一份足够简单，长期维护的基于Github Pages的Hexo博客搭建教程，希望能有所帮助。当然，我个人的力量是有限的，因此也希望使用Hexo的大家也能一起行动起来，通过提交PR，发布issues或者在下方评论区评论等形式参与到本文档的编辑中来。浏览时，使用Ctrl+F搜索关键词。</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><ul>
+<li><p>在自己认为合适的地方创建一个文件夹，然后在文件夹空白处按住Shift+鼠标右键，然后点击在此处打开命令行窗口。（同样要记住啦，下文中会使用在当前目录打开命令行来代指上述的操作）<br>在命令行中输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure>
+</li>
+<li><p>可能你会看到一个WARN，但是不用担心，这不会影响你的正常使用。<br> 然后输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo --save</div></pre></td></tr></table></figure>
+</li>
+<li><p>然后你会看到命令行窗口刷了一大堆白字，下面我们来看一看Hexo是不是已经安装好了</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo -v</div></pre></td></tr></table></figure>
+<p>如果你看到了文字，则说明已经安装成功了。</p>
+<h3 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h3><ul>
+<li>接着上面的操作，输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo init</div><div class="line">npm install</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>之后npm将会自动安装你需要的组件，只需要等待npm操作即可。</p>
+<h3 id="初体验Hexo"><a href="#初体验Hexo" class="headerlink" title="初体验Hexo"></a>初体验Hexo</h3><ul>
+<li>继续操作，同样是在命令行中，输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo s</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>然后会提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
+<p>到目前为止，Hexo在本地的配置已经全都结束了。</p>
+<h3 id="如果第二次发布"><a href="#如果第二次发布" class="headerlink" title="如果第二次发布"></a>如果第二次发布</h3><p> 在命令行输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/28/first/" data-id="cizoyra0d0001oguohnoq2wd1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-each" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/28/each/" class="article-date">
+  <time datetime="2017-02-28T03:18:10.644Z" itemprop="datePublished">2017-02-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/28/each/">jQuery 遍历函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>jQuery 遍历函数包括了用于筛选、查找和串联元素的方法。</p>
+<h4 id="函数-："><a href="#函数-：" class="headerlink" title="函数 ："></a>函数 ：</h4><ul>
+<li>.add()： 将元素添加到匹配元素的集合中。  | </li>
+<li>.andSelf()    把堆栈中之前的元素集添加到当前集合中。</li>
+<li>.children()    获得匹配元素集合中每个元素的所有子元素。</li>
+<li>.closest()    从元素本身开始，逐级向上级元素匹配，并返回最先匹配的祖先元素。</li>
+<li>.contents()    获得匹配元素集合中每个元素的子元素，包括文本和注释节点。</li>
+<li>.each()    对 jQuery 对象进行迭代，为每个匹配元素执行函数。</li>
+<li>.end()    结束当前链中最近的一次筛选操作，并将匹配元素集合返回到前一次的状态。</li>
+<li>.eq()    将匹配元素集合缩减为位于指定索引的新元素。</li>
+<li>.filter()    将匹配元素集合缩减为匹配选择器或匹配函数返回值的新元素。</li>
+<li>.find()    获得当前匹配元素集合中每个元素的后代，由选择器进行筛选。</li>
+<li>.first()    将匹配元素集合缩减为集合中的第一个元素。</li>
+<li>.has()    将匹配元素集合缩减为包含特定元素的后代的集合。</li>
+<li>.is()    根据选择器检查当前匹配元素集合，如果存在至少一个匹配元素，则返回 true。</li>
+<li>.last()    将匹配元素集合缩减为集合中的最后一个元素。</li>
+<li>.map()    把当前匹配集合中的每个元素传递给函数，产生包含返回值的新 jQuery 对象。</li>
+<li>.next()    获得匹配元素集合中每个元素紧邻的同辈元素。</li>
+<li>.nextAll()    获得匹配元素集合中每个元素之后的所有同辈元素，由选择器进行筛选（可选）。</li>
+<li>.nextUntil()    获得每个元素之后所有的同辈元素，直到遇到匹配选择器的元素为止。</li>
+<li>.not()    从匹配元素集合中删除元素。</li>
+<li>.offsetParent()    获得用于定位的第一个父元素。</li>
+<li>.parent()    获得当前匹配元素集合中每个元素的父元素，由选择器筛选（可选）。</li>
+<li>.parents()    获得当前匹配元素集合中每个元素的祖先元素，由选择器筛选（可选）。</li>
+<li>.parentsUntil()    获得当前匹配元素集合中每个元素的祖先元素，直到遇到匹配选择器的元素为止。</li>
+<li>.prev()    获得匹配元素集合中每个元素紧邻的前一个同辈元素，由选择器筛选（可选）。</li>
+<li>.prevAll()    获得匹配元素集合中每个元素之前的所有同辈元素，由选择器进行筛选（可选）。</li>
+<li>.prevUntil()    获得每个元素之前所有的同辈元素，直到遇到匹配选择器的元素为止。</li>
+<li>.siblings()    获得匹配元素集合中所有元素的同辈元素，由选择器筛选（可选）。</li>
+<li>.slice()    将匹配元素集合缩减为指定范围的子集。</li>
+</ul>
+<h3 id="each的用法"><a href="#each的用法" class="headerlink" title="each的用法"></a>each的用法</h3><h4 id="1-数组中的each"><a href="#1-数组中的each" class="headerlink" title="1.数组中的each"></a>1.数组中的each</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [ &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;];     </div><div class="line"> $.each(arr, function()&#123;     </div><div class="line">    alert(this);     </div><div class="line"> &#125;);</div></pre></td></tr></table></figure>
+<p>上面这个each输出的结果分别为：one,two,three,four<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var arr1 = [[1, 4, 3], [4, 6, 6], [7, 20, 9]];     </div><div class="line">$.each(arr1, function(i, item)&#123;     </div><div class="line">   alert(item[0]);     </div><div class="line">&#125;); </div><div class="line">```    </div><div class="line">其实arr1为一个二维数组，item相当于取每一个一维数组，   </div><div class="line">item[0]相对于取每一个一维数组里的第一个值   </div><div class="line">所以上面这个each输出分别为：1   4   7</div></pre></td></tr></table></figure></p>
+<p>var obj = { one:1, two:2, three:3, four:4};<br>$.each(obj, function(i) {<br>    alert(obj[i]);<br>});<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">这个each就有更厉害了，能循环每一个属性     </div><div class="line">输出结果为：1   2  3  4 </div><div class="line">#### 2.遍历Dom元素中</div></pre></td></tr></table></figure></p>
+<p><html></html></p>
+<p><head></head></p>
+<p><script type="text/javascript" src="/jquery/jquery.js"></script></p>
+<p><script type="text/javascript"><br>$(document).ready(function(){<br>  $(“button”).click(function(){<br>    $(“li”).each(function(){<br>      alert($(this).text())<br>    });<br>  });<br>});<br></script><br></p>
+<p><body></body></p>
+<p><button>输出每个列表项的值</button></p>
+<p><ul></ul></p>
+<p><li>Coffee</li></p>
+<p><li>Milk</li></p>
+<p><li>Soda</li><br><br><br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">依次弹出Coffee，Milk，Soda</div><div class="line">#### 3.each和map的比较</div><div class="line">each方法：</div><div class="line"></div><div class="line">定义一个空数组，通过each方法，往数组添加ID值；最后将数组转换成字符串后，alert这个值；</div></pre></td></tr></table></figure></p>
+<p>$(function(){<br>    var arr = [];<br>    $(“:checkbox”).each(function(index){<br>        arr.push(this.id);<br>    });<br>    var str = arr.join(“,”);<br>    alert(str);<br>})</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">map方法:</div><div class="line"></div><div class="line">将每个:checkbox执行return this.id；并将这些返回值，自动的保存为jQuery对象，然后用get方法将其转换成原生Javascript数组，再使用join方法转换成字符串，最后alert这个值；</div></pre></td></tr></table></figure>
+<p>$(function(){<br>    var str = $(“:checkbox”).map(function() {<br>        return this.id;<br>    }).get().join();<br>    alert(str);<br>})</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">当有需一个数组的值的时候，用map方法，很方便。</div><div class="line"></div><div class="line">####  4.jquery中使用each</div><div class="line">例遍数组，同时使用元素索引和内容。（i是索引，n是内容）</div></pre></td></tr></table></figure>
+<p>$.each( [0,1,2], function(i, n){<br>alert( “Item #” + i + “: “ + n );<br>}); </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">例遍对象，同时使用成员名称和变量内容。（i是成员名称，n是变量内容）</div></pre></td></tr></table></figure>
+<p>$.each( { name: “John”, lang: “JS” }, function(i, n){<br>alert( “Name: “ + i + “, Value: “ + n );<br>}); </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">例遍dom元素，此处以一个input表单元素作为例子。 </div><div class="line">如果你dom中有一段这样的代码 </div><div class="line">&lt;input name=&quot;aaa&quot; type=&quot;hidden&quot; value=&quot;111&quot; /&gt; </div><div class="line">&lt;input name=&quot;bbb&quot; type=&quot;hidden&quot; value=&quot;222&quot; /&gt; </div><div class="line">&lt;input name=&quot;ccc&quot; type=&quot;hidden&quot; value=&quot;333&quot; /&gt; </div><div class="line">&lt;input name=&quot;ddd&quot; type=&quot;hidden&quot; value=&quot;444&quot;/&gt; </div><div class="line">然后你使用each如下</div></pre></td></tr></table></figure>
+<p>$.each($(“input:hidden”), function(i,val){<br>alert(val); //输出[object HTMLInputElement]，因为它是一个表单元素。<br>alert(i); //输出索引为0，1，2，3<br>alert(val.name); //输出name的值<br>alert(val.value); //输出value的值<br>}); </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#### 5.each中根据this查找元素</div></pre></td></tr></table></figure>
+<p><ol class="commentlist"><br>    <li class="comment"><br>        <div class="comment-body"><br>          <p>嗨，第一层评论</p><br>          <div class="reply"><br>            <a href="#" class=".comment-reply-link">回复</a><br>          </div><br>        </div><br>        <ul class="children"><br>          <li class="comment"><br>            <div class="comment-body"><br>            <p>第二层评论</p><br>            <div class="reply"><br>              <a href="#" class=".comment-reply-link">回复</a><br>            </div><br>          </div></li><br>        </ul><br>    </li><br></ol><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">js代码</div></pre></td></tr></table></figure></p>
+<p>$(“div.reply”).hover(function(){<br>  $(this).find(“.comment-reply-link”).show();<br>},function(){<br>  $(this).find(“.comment-reply-link”).hide();<br>});<br>```</p>
+<h4 id="6-官方解释"><a href="#6-官方解释" class="headerlink" title="6.官方解释"></a>6.官方解释</h4><p>jQuery.each(object, [callback]) </p>
+<p>概述<br>通用例遍方法，可用于例遍对象和数组。 </p>
+<p>不同于例遍 jQuery 对象的 $().each() 方法，此方法可用于例遍任何对象。回调函数拥有两个参数：第一个为对象的成员或数组的索引，第二个为对应变量或内容。如果需要退出 each 循环可使回调函数返回 false，其它返回值将被忽略。 </p>
+<p>参数<br>objectObject<br>需要例遍的对象或数组。 </p>
+<p>callback (可选)Function<br>每个成员/元素执行的回调函数。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/28/each/" data-id="cizoyra020000oguoy3rerusr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-reg" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/28/reg/" class="article-date">
+  <time datetime="2017-02-28T03:18:10.636Z" itemprop="datePublished">2017-02-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/28/reg/">这20个正则表达式，让你少写1000行代码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>正则表达式——古老而又强大的文本处理工具。仅用一段简短的表达式语句，就能快速地实现一个复杂的业务逻辑。掌握正则表达式，让你的开发效率有一个质的飞跃。</p>
+<p>正则表达式经常被用于字段或任意字符串的校验，比如下面这段校验基本日期格式的JavaScript代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var reg = /^(\\d&#123;1,4&#125;)(-|\\/)(\\d&#123;1,2&#125;)\\2(\\d&#123;1,2&#125;)$/; </div><div class="line">var r = fieldValue.match(reg);             </div><div class="line">if(r==null)alert(&apos;Date format error!&apos;);</div></pre></td></tr></table></figure>
+<h4 id="1、校验密码强度"><a href="#1、校验密码强度" class="headerlink" title="1、校验密码强度"></a>1、校验密码强度</h4><p>密码的强度必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).&#123;8,10&#125;$</div></pre></td></tr></table></figure>
+<h4 id="2、校验中文"><a href="#2、校验中文" class="headerlink" title="2、校验中文"></a>2、校验中文</h4><p>字符串只能是中文</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^[\\u4e00-\\u9fa5]&#123;0,&#125;$</div></pre></td></tr></table></figure>
+<h4 id="3、由数字，26个英文字母或下划线组成的字符串"><a href="#3、由数字，26个英文字母或下划线组成的字符串" class="headerlink" title="3、由数字，26个英文字母或下划线组成的字符串"></a>3、由数字，26个英文字母或下划线组成的字符串</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^\\w+$</div></pre></td></tr></table></figure>
+<h4 id="4、校验E-Mail-地址"><a href="#4、校验E-Mail-地址" class="headerlink" title="4、校验E-Mail 地址"></a>4、校验E-Mail 地址</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[\\w!#$%&amp;&apos;*+/=?^_`&#123;|&#125;~-]+(?:\\.[\\w!#$%&amp;&apos;*+/=?^_`&#123;|&#125;~-]+)*@(?:[\\w](?:[\\w-]*[\\w])?\\.)+[\\w](?:[\\w-]*[\\w])?</div></pre></td></tr></table></figure>
+<h4 id="5、校验身份证号码"><a href="#5、校验身份证号码" class="headerlink" title="5、校验身份证号码"></a>5、校验身份证号码</h4><p>15位：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^[1-9]\\d&#123;7&#125;((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d&#123;3&#125;$</div></pre></td></tr></table></figure></p>
+<p>18位：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^[1-9]\\d&#123;5&#125;[1-9]\\d&#123;3&#125;((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d&#123;3&#125;([0-9]|X)$</div></pre></td></tr></table></figure>
+<h4 id="6、校验日期"><a href="#6、校验日期" class="headerlink" title="6、校验日期"></a>6、校验日期</h4><p>“yyyy-mm-dd“ 格式的日期校验，已考虑平闰年<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^(?:(?!0000)[0-9]&#123;4&#125;-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]&#123;2&#125;(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)$</div></pre></td></tr></table></figure></p>
+<h4 id="7、校验金额"><a href="#7、校验金额" class="headerlink" title="7、校验金额"></a>7、校验金额</h4><p>金额校验，精确到2位小数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^[0-9]+(.[0-9]&#123;2&#125;)?$</div></pre></td></tr></table></figure></p>
+<h4 id="8、校验手机号"><a href="#8、校验手机号" class="headerlink" title="8、校验手机号"></a>8、校验手机号</h4><p>下面是国内 13、15、18开头的手机号正则表达式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\\d&#123;8&#125;$</div></pre></td></tr></table></figure></p>
+<h4 id="9、判断IE的版本"><a href="#9、判断IE的版本" class="headerlink" title="9、判断IE的版本"></a>9、判断IE的版本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^.*MSIE [5-8](?:\\.[0-9]+)?(?!.*Trident\\/[5-9]\\.0).*$</div></pre></td></tr></table></figure>
+<h4 id="10、校验IP-v4地址"><a href="#10、校验IP-v4地址" class="headerlink" title="10、校验IP-v4地址"></a>10、校验IP-v4地址</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.)&#123;3&#125;(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b</div></pre></td></tr></table></figure>
+<h4 id="11、校验IP-v6地址"><a href="#11、校验IP-v6地址" class="headerlink" title="11、校验IP-v6地址"></a>11、校验IP-v6地址</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(([0-9a-fA-F]&#123;1,4&#125;:)&#123;7,7&#125;[0-9a-fA-F]&#123;1,4&#125;|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,7&#125;:|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,6&#125;:[0-9a-fA-F]&#123;1,4&#125;|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,5&#125;(:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,2&#125;|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,4&#125;(:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,3&#125;|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,3&#125;(:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,4&#125;|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,2&#125;(:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,5&#125;|[0-9a-fA-F]&#123;1,4&#125;:((:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,6&#125;)|:((:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,7&#125;|:)|fe80:(:[0-9a-fA-F]&#123;0,4&#125;)&#123;0,4&#125;%[0-9a-zA-Z]&#123;1,&#125;|::(ffff(:0&#123;1,4&#125;)&#123;0,1&#125;:)&#123;0,1&#125;((25[0-5]|(2[0-4]|1&#123;0,1&#125;[0-9])&#123;0,1&#125;[0-9])\\.)&#123;3,3&#125;(25[0-5]|(2[0-4]|1&#123;0,1&#125;[0-9])&#123;0,1&#125;[0-9])|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,4&#125;:((25[0-5]|(2[0-4]|1&#123;0,1&#125;[0-9])&#123;0,1&#125;[0-9])\\.)&#123;3,3&#125;(25[0-5]|(2[0-4]|1&#123;0,1&#125;[0-9])&#123;0,1&#125;[0-9]))</div></pre></td></tr></table></figure>
+<h4 id="12、检查URL的前缀"><a href="#12、检查URL的前缀" class="headerlink" title="12、检查URL的前缀"></a>12、检查URL的前缀</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">if (!s.match(/^[a-zA-Z]+:\\/\\//))&#123;</div><div class="line">   s = &apos;http://&apos; + s;&#125;</div></pre></td></tr></table></figure>
+<h4 id="13、提取URL链接"><a href="#13、提取URL链接" class="headerlink" title="13、提取URL链接"></a>13、提取URL链接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^(f|ht)&#123;1&#125;(tp|tps):\\/\\/([\\w-]+\\.)+[\\w-]+(\\/[\\w- ./?%&amp;=]*)?</div></pre></td></tr></table></figure>
+<h4 id="14、文件路径及扩展名校验"><a href="#14、文件路径及扩展名校验" class="headerlink" title="14、文件路径及扩展名校验"></a>14、文件路径及扩展名校验</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^([a-zA-Z]\\:|\\\\)\\\\([^\\\\]+\\\\)*[^\\/:*?&quot;&lt;&gt;|]+\\.txt(l)?$</div></pre></td></tr></table></figure>
+<h4 id="15、提取Color-Hex-Codes"><a href="#15、提取Color-Hex-Codes" class="headerlink" title="15、提取Color Hex  Codes"></a>15、提取Color Hex  Codes</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^#([A-Fa-f0-9]&#123;6&#125;|[A-Fa-f0-9]&#123;3&#125;)$</div></pre></td></tr></table></figure>
+<h4 id="16、提取网页图片"><a href="#16、提取网页图片" class="headerlink" title="16、提取网页图片"></a>16、提取网页图片</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\\&lt; *[img][^\\\\&gt;]*[src] *= *[\\&quot;\\&apos;]&#123;0,1&#125;([^\\&quot;\\&apos;\\ &gt;]*)</div></pre></td></tr></table></figure>
+<h4 id="17、提取页面超链接"><a href="#17、提取页面超链接" class="headerlink" title="17、提取页面超链接"></a>17、提取页面超链接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(&lt;a\\s*(?!.*\\brel=)[^&gt;]*)(href=&quot;https?:\\/\\/)((?!(?:(?:www\\.)?&apos;.implode(&apos;|(?:www\\.)?&apos;, $follow_list).&apos;))[^&quot;]+)&quot;((?!.*\\brel=)[^&gt;]*)(?:[^&gt;]*)&gt;</div></pre></td></tr></table></figure>
+<h4 id="18、查找CSS属性"><a href="#18、查找CSS属性" class="headerlink" title="18、查找CSS属性"></a>18、查找CSS属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^\\s*[a-zA-Z\\-]+\\s*[:]&#123;1&#125;\\s[a-zA-Z0-9\\s.#]+[;]&#123;1&#125;</div></pre></td></tr></table></figure>
+<h4 id="19、抽取注释"><a href="#19、抽取注释" class="headerlink" title="19、抽取注释"></a>19、抽取注释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!--(.*?)--&gt;</div></pre></td></tr></table></figure>
+<h4 id="20、匹配HTML标签"><a href="#20、匹配HTML标签" class="headerlink" title="20、匹配HTML标签"></a>20、匹配HTML标签</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;\\/?\\w+((\\s+\\w+(\\s*=\\s*(?:&quot;.*?&quot;|&apos;.*?&apos;|[\\^&apos;&quot;&gt;\\s]+))?)+\\s*|\\s*)\\/?&gt;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/28/reg/" data-id="cizoyra0p0004oguo7gdsnv3w" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-vue" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -142,7 +363,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/28/vue/" data-id="cizobsqly00048guouyfz6m1t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/02/28/vue/" data-id="cizoyra0s0005oguo8x8wwg72" class="article-share-link">Share</a>
       
       
     </footer>
@@ -270,95 +491,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/28/jQuery_ajax/" data-id="cizobsqlu00028guo3smt8g28" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-each" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/28/each/" class="article-date">
-  <time datetime="2017-02-27T16:23:16.011Z" itemprop="datePublished">2017-02-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="title-jQuery-遍历函数"><a href="#title-jQuery-遍历函数" class="headerlink" title="title:jQuery 遍历函数"></a>title:jQuery 遍历函数</h2><p>jQuery 遍历函数包括了用于筛选、查找和串联元素的方法。</p>
-<h4 id="函数-："><a href="#函数-：" class="headerlink" title="函数 ："></a>函数 ：</h4><ul>
-<li>.add()： 将元素添加到匹配元素的集合中。  | </li>
-<li>.andSelf()    把堆栈中之前的元素集添加到当前集合中。</li>
-<li>.children()    获得匹配元素集合中每个元素的所有子元素。</li>
-<li>.closest()    从元素本身开始，逐级向上级元素匹配，并返回最先匹配的祖先元素。</li>
-<li>.contents()    获得匹配元素集合中每个元素的子元素，包括文本和注释节点。</li>
-<li>.each()    对 jQuery 对象进行迭代，为每个匹配元素执行函数。</li>
-<li>.end()    结束当前链中最近的一次筛选操作，并将匹配元素集合返回到前一次的状态。</li>
-<li>.eq()    将匹配元素集合缩减为位于指定索引的新元素。</li>
-<li>.filter()    将匹配元素集合缩减为匹配选择器或匹配函数返回值的新元素。</li>
-<li>.find()    获得当前匹配元素集合中每个元素的后代，由选择器进行筛选。</li>
-<li>.first()    将匹配元素集合缩减为集合中的第一个元素。</li>
-<li>.has()    将匹配元素集合缩减为包含特定元素的后代的集合。</li>
-<li>.is()    根据选择器检查当前匹配元素集合，如果存在至少一个匹配元素，则返回 true。</li>
-<li>.last()    将匹配元素集合缩减为集合中的最后一个元素。</li>
-<li>.map()    把当前匹配集合中的每个元素传递给函数，产生包含返回值的新 jQuery 对象。</li>
-<li>.next()    获得匹配元素集合中每个元素紧邻的同辈元素。</li>
-<li>.nextAll()    获得匹配元素集合中每个元素之后的所有同辈元素，由选择器进行筛选（可选）。</li>
-<li>.nextUntil()    获得每个元素之后所有的同辈元素，直到遇到匹配选择器的元素为止。</li>
-<li>.not()    从匹配元素集合中删除元素。</li>
-<li>.offsetParent()    获得用于定位的第一个父元素。</li>
-<li>.parent()    获得当前匹配元素集合中每个元素的父元素，由选择器筛选（可选）。</li>
-<li>.parents()    获得当前匹配元素集合中每个元素的祖先元素，由选择器筛选（可选）。</li>
-<li>.parentsUntil()    获得当前匹配元素集合中每个元素的祖先元素，直到遇到匹配选择器的元素为止。</li>
-<li>.prev()    获得匹配元素集合中每个元素紧邻的前一个同辈元素，由选择器筛选（可选）。</li>
-<li>.prevAll()    获得匹配元素集合中每个元素之前的所有同辈元素，由选择器进行筛选（可选）。</li>
-<li>.prevUntil()    获得每个元素之前所有的同辈元素，直到遇到匹配选择器的元素为止。</li>
-<li>.siblings()    获得匹配元素集合中所有元素的同辈元素，由选择器筛选（可选）。</li>
-<li>.slice()    将匹配元素集合缩减为指定范围的子集。</li>
-</ul>
-<h3 id="each的用法"><a href="#each的用法" class="headerlink" title="each的用法"></a>each的用法</h3><h4 id="1-数组中的each"><a href="#1-数组中的each" class="headerlink" title="1.数组中的each"></a>1.数组中的each</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [ &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;];     </div><div class="line"> $.each(arr, function()&#123;     </div><div class="line">    alert(this);     </div><div class="line"> &#125;);</div></pre></td></tr></table></figure>
-<p>上面这个each输出的结果分别为：one,two,three,four<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var arr1 = [[1, 4, 3], [4, 6, 6], [7, 20, 9]];     </div><div class="line">$.each(arr1, function(i, item)&#123;     </div><div class="line">   alert(item[0]);     </div><div class="line">&#125;); </div><div class="line">```    </div><div class="line">其实arr1为一个二维数组，item相当于取每一个一维数组，   </div><div class="line">item[0]相对于取每一个一维数组里的第一个值   </div><div class="line">所以上面这个each输出分别为：1   4   7</div></pre></td></tr></table></figure></p>
-<p>var obj = { one:1, two:2, three:3, four:4};<br>$.each(obj, function(i) {<br>    alert(obj[i]);<br>});<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">这个each就有更厉害了，能循环每一个属性     </div><div class="line">输出结果为：1   2  3  4 </div><div class="line">#### 2.遍历Dom元素中</div></pre></td></tr></table></figure></p>
-<p><html></html></p>
-<p><head></head></p>
-<p><script type="text/javascript" src="/jquery/jquery.js"></script></p>
-<p><script type="text/javascript"><br>$(document).ready(function(){<br>  $(“button”).click(function(){<br>    $(“li”).each(function(){<br>      alert($(this).text())<br>    });<br>  });<br>});<br></script><br></p>
-<p><body></body></p>
-<p><button>输出每个列表项的值</button></p>
-<p><ul></ul></p>
-<p><li>Coffee</li></p>
-<p><li>Milk</li></p>
-<p><li>Soda</li><br><br><br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">依次弹出Coffee，Milk，Soda</div><div class="line">#### 3.each和map的比较</div><div class="line">each方法：</div><div class="line"></div><div class="line">定义一个空数组，通过each方法，往数组添加ID值；最后将数组转换成字符串后，alert这个值；</div></pre></td></tr></table></figure></p>
-<p>$(function(){<br>    var arr = [];<br>    $(“:checkbox”).each(function(index){<br>        arr.push(this.id);<br>    });<br>    var str = arr.join(“,”);<br>    alert(str);<br>})</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">map方法:</div><div class="line"></div><div class="line">将每个:checkbox执行return this.id；并将这些返回值，自动的保存为jQuery对象，然后用get方法将其转换成原生Javascript数组，再使用join方法转换成字符串，最后alert这个值；</div></pre></td></tr></table></figure>
-<p>$(function(){<br>    var str = $(“:checkbox”).map(function() {<br>        return this.id;<br>    }).get().join();<br>    alert(str);<br>})</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">当有需一个数组的值的时候，用map方法，很方便。</div><div class="line"></div><div class="line">####  4.jquery中使用each</div><div class="line">例遍数组，同时使用元素索引和内容。（i是索引，n是内容）</div></pre></td></tr></table></figure>
-<p>$.each( [0,1,2], function(i, n){<br>alert( “Item #” + i + “: “ + n );<br>}); </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">例遍对象，同时使用成员名称和变量内容。（i是成员名称，n是变量内容）</div></pre></td></tr></table></figure>
-<p>$.each( { name: “John”, lang: “JS” }, function(i, n){<br>alert( “Name: “ + i + “, Value: “ + n );<br>}); </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">例遍dom元素，此处以一个input表单元素作为例子。 </div><div class="line">如果你dom中有一段这样的代码 </div><div class="line">&lt;input name=&quot;aaa&quot; type=&quot;hidden&quot; value=&quot;111&quot; /&gt; </div><div class="line">&lt;input name=&quot;bbb&quot; type=&quot;hidden&quot; value=&quot;222&quot; /&gt; </div><div class="line">&lt;input name=&quot;ccc&quot; type=&quot;hidden&quot; value=&quot;333&quot; /&gt; </div><div class="line">&lt;input name=&quot;ddd&quot; type=&quot;hidden&quot; value=&quot;444&quot;/&gt; </div><div class="line">然后你使用each如下</div></pre></td></tr></table></figure>
-<p>$.each($(“input:hidden”), function(i,val){<br>alert(val); //输出[object HTMLInputElement]，因为它是一个表单元素。<br>alert(i); //输出索引为0，1，2，3<br>alert(val.name); //输出name的值<br>alert(val.value); //输出value的值<br>}); </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#### 5.each中根据this查找元素</div></pre></td></tr></table></figure>
-<p><ol class="commentlist"><br>    <li class="comment"><br>        <div class="comment-body"><br>          <p>嗨，第一层评论</p><br>          <div class="reply"><br>            <a href="#" class=".comment-reply-link">回复</a><br>          </div><br>        </div><br>        <ul class="children"><br>          <li class="comment"><br>            <div class="comment-body"><br>            <p>第二层评论</p><br>            <div class="reply"><br>              <a href="#" class=".comment-reply-link">回复</a><br>            </div><br>          </div></li><br>        </ul><br>    </li><br></ol><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">js代码</div></pre></td></tr></table></figure></p>
-<p>$(“div.reply”).hover(function(){<br>  $(this).find(“.comment-reply-link”).show();<br>},function(){<br>  $(this).find(“.comment-reply-link”).hide();<br>});<br>```</p>
-<h4 id="6-官方解释"><a href="#6-官方解释" class="headerlink" title="6.官方解释"></a>6.官方解释</h4><p>jQuery.each(object, [callback]) </p>
-<p>概述<br>通用例遍方法，可用于例遍对象和数组。 </p>
-<p>不同于例遍 jQuery 对象的 $().each() 方法，此方法可用于例遍任何对象。回调函数拥有两个参数：第一个为对象的成员或数组的索引，第二个为对应变量或内容。如果需要退出 each 循环可使回调函数返回 false，其它返回值将被忽略。 </p>
-<p>参数<br>objectObject<br>需要例遍的对象或数组。 </p>
-<p>callback (可选)Function<br>每个成员/元素执行的回调函数。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/28/each/" data-id="cizobsqlr00018guos4cz33ec" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/02/28/jQuery_ajax/" data-id="cizoyra0i0002oguoqz7hd97a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -688,122 +821,7 @@ export default UseChildrenComponent;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/28/react/" data-id="cizobsqlx00038guovto9ai6v" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-reg" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/27/reg/" class="article-date">
-  <time datetime="2017-02-27T15:57:07.047Z" itemprop="datePublished">2017-02-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="title：这20个正则表达式，让你少写1-000行代码"><a href="#title：这20个正则表达式，让你少写1-000行代码" class="headerlink" title="title：这20个正则表达式，让你少写1,000行代码"></a>title：这20个正则表达式，让你少写1,000行代码</h2><p>正则表达式——古老而又强大的文本处理工具。仅用一段简短的表达式语句，就能快速地实现一个复杂的业务逻辑。掌握正则表达式，让你的开发效率有一个质的飞跃。</p>
-<p>正则表达式经常被用于字段或任意字符串的校验，比如下面这段校验基本日期格式的JavaScript代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var reg = /^(\\d&#123;1,4&#125;)(-|\\/)(\\d&#123;1,2&#125;)\\2(\\d&#123;1,2&#125;)$/; </div><div class="line">var r = fieldValue.match(reg);             </div><div class="line">if(r==null)alert(&apos;Date format error!&apos;);</div></pre></td></tr></table></figure>
-<h4 id="1、校验密码强度"><a href="#1、校验密码强度" class="headerlink" title="1、校验密码强度"></a>1、校验密码强度</h4><p>密码的强度必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).&#123;8,10&#125;$</div></pre></td></tr></table></figure>
-<h4 id="2、校验中文"><a href="#2、校验中文" class="headerlink" title="2、校验中文"></a>2、校验中文</h4><p>字符串只能是中文</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^[\\u4e00-\\u9fa5]&#123;0,&#125;$</div></pre></td></tr></table></figure>
-<h4 id="3、由数字，26个英文字母或下划线组成的字符串"><a href="#3、由数字，26个英文字母或下划线组成的字符串" class="headerlink" title="3、由数字，26个英文字母或下划线组成的字符串"></a>3、由数字，26个英文字母或下划线组成的字符串</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^\\w+$</div></pre></td></tr></table></figure>
-<h4 id="4、校验E-Mail-地址"><a href="#4、校验E-Mail-地址" class="headerlink" title="4、校验E-Mail 地址"></a>4、校验E-Mail 地址</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[\\w!#$%&amp;&apos;*+/=?^_`&#123;|&#125;~-]+(?:\\.[\\w!#$%&amp;&apos;*+/=?^_`&#123;|&#125;~-]+)*@(?:[\\w](?:[\\w-]*[\\w])?\\.)+[\\w](?:[\\w-]*[\\w])?</div></pre></td></tr></table></figure>
-<h4 id="5、校验身份证号码"><a href="#5、校验身份证号码" class="headerlink" title="5、校验身份证号码"></a>5、校验身份证号码</h4><p>15位：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^[1-9]\\d&#123;7&#125;((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d&#123;3&#125;$</div></pre></td></tr></table></figure></p>
-<p>18位：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^[1-9]\\d&#123;5&#125;[1-9]\\d&#123;3&#125;((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d&#123;3&#125;([0-9]|X)$</div></pre></td></tr></table></figure>
-<h4 id="6、校验日期"><a href="#6、校验日期" class="headerlink" title="6、校验日期"></a>6、校验日期</h4><p>“yyyy-mm-dd“ 格式的日期校验，已考虑平闰年<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^(?:(?!0000)[0-9]&#123;4&#125;-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]&#123;2&#125;(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)$</div></pre></td></tr></table></figure></p>
-<h4 id="7、校验金额"><a href="#7、校验金额" class="headerlink" title="7、校验金额"></a>7、校验金额</h4><p>金额校验，精确到2位小数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^[0-9]+(.[0-9]&#123;2&#125;)?$</div></pre></td></tr></table></figure></p>
-<h4 id="8、校验手机号"><a href="#8、校验手机号" class="headerlink" title="8、校验手机号"></a>8、校验手机号</h4><p>下面是国内 13、15、18开头的手机号正则表达式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\\d&#123;8&#125;$</div></pre></td></tr></table></figure></p>
-<h4 id="9、判断IE的版本"><a href="#9、判断IE的版本" class="headerlink" title="9、判断IE的版本"></a>9、判断IE的版本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^.*MSIE [5-8](?:\\.[0-9]+)?(?!.*Trident\\/[5-9]\\.0).*$</div></pre></td></tr></table></figure>
-<h4 id="10、校验IP-v4地址"><a href="#10、校验IP-v4地址" class="headerlink" title="10、校验IP-v4地址"></a>10、校验IP-v4地址</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.)&#123;3&#125;(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b</div></pre></td></tr></table></figure>
-<h4 id="11、校验IP-v6地址"><a href="#11、校验IP-v6地址" class="headerlink" title="11、校验IP-v6地址"></a>11、校验IP-v6地址</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(([0-9a-fA-F]&#123;1,4&#125;:)&#123;7,7&#125;[0-9a-fA-F]&#123;1,4&#125;|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,7&#125;:|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,6&#125;:[0-9a-fA-F]&#123;1,4&#125;|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,5&#125;(:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,2&#125;|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,4&#125;(:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,3&#125;|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,3&#125;(:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,4&#125;|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,2&#125;(:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,5&#125;|[0-9a-fA-F]&#123;1,4&#125;:((:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,6&#125;)|:((:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,7&#125;|:)|fe80:(:[0-9a-fA-F]&#123;0,4&#125;)&#123;0,4&#125;%[0-9a-zA-Z]&#123;1,&#125;|::(ffff(:0&#123;1,4&#125;)&#123;0,1&#125;:)&#123;0,1&#125;((25[0-5]|(2[0-4]|1&#123;0,1&#125;[0-9])&#123;0,1&#125;[0-9])\\.)&#123;3,3&#125;(25[0-5]|(2[0-4]|1&#123;0,1&#125;[0-9])&#123;0,1&#125;[0-9])|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,4&#125;:((25[0-5]|(2[0-4]|1&#123;0,1&#125;[0-9])&#123;0,1&#125;[0-9])\\.)&#123;3,3&#125;(25[0-5]|(2[0-4]|1&#123;0,1&#125;[0-9])&#123;0,1&#125;[0-9]))</div></pre></td></tr></table></figure>
-<h4 id="12、检查URL的前缀"><a href="#12、检查URL的前缀" class="headerlink" title="12、检查URL的前缀"></a>12、检查URL的前缀</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">if (!s.match(/^[a-zA-Z]+:\\/\\//))&#123;</div><div class="line">   s = &apos;http://&apos; + s;&#125;</div></pre></td></tr></table></figure>
-<h4 id="13、提取URL链接"><a href="#13、提取URL链接" class="headerlink" title="13、提取URL链接"></a>13、提取URL链接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^(f|ht)&#123;1&#125;(tp|tps):\\/\\/([\\w-]+\\.)+[\\w-]+(\\/[\\w- ./?%&amp;=]*)?</div></pre></td></tr></table></figure>
-<h4 id="14、文件路径及扩展名校验"><a href="#14、文件路径及扩展名校验" class="headerlink" title="14、文件路径及扩展名校验"></a>14、文件路径及扩展名校验</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^([a-zA-Z]\\:|\\\\)\\\\([^\\\\]+\\\\)*[^\\/:*?&quot;&lt;&gt;|]+\\.txt(l)?$</div></pre></td></tr></table></figure>
-<h4 id="15、提取Color-Hex-Codes"><a href="#15、提取Color-Hex-Codes" class="headerlink" title="15、提取Color Hex  Codes"></a>15、提取Color Hex  Codes</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^#([A-Fa-f0-9]&#123;6&#125;|[A-Fa-f0-9]&#123;3&#125;)$</div></pre></td></tr></table></figure>
-<h4 id="16、提取网页图片"><a href="#16、提取网页图片" class="headerlink" title="16、提取网页图片"></a>16、提取网页图片</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\\&lt; *[img][^\\\\&gt;]*[src] *= *[\\&quot;\\&apos;]&#123;0,1&#125;([^\\&quot;\\&apos;\\ &gt;]*)</div></pre></td></tr></table></figure>
-<h4 id="17、提取页面超链接"><a href="#17、提取页面超链接" class="headerlink" title="17、提取页面超链接"></a>17、提取页面超链接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(&lt;a\\s*(?!.*\\brel=)[^&gt;]*)(href=&quot;https?:\\/\\/)((?!(?:(?:www\\.)?&apos;.implode(&apos;|(?:www\\.)?&apos;, $follow_list).&apos;))[^&quot;]+)&quot;((?!.*\\brel=)[^&gt;]*)(?:[^&gt;]*)&gt;</div></pre></td></tr></table></figure>
-<h4 id="18、查找CSS属性"><a href="#18、查找CSS属性" class="headerlink" title="18、查找CSS属性"></a>18、查找CSS属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">^\\s*[a-zA-Z\\-]+\\s*[:]&#123;1&#125;\\s[a-zA-Z0-9\\s.#]+[;]&#123;1&#125;</div></pre></td></tr></table></figure>
-<h4 id="19、抽取注释"><a href="#19、抽取注释" class="headerlink" title="19、抽取注释"></a>19、抽取注释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!--(.*?)--&gt;</div></pre></td></tr></table></figure>
-<h4 id="20、匹配HTML标签"><a href="#20、匹配HTML标签" class="headerlink" title="20、匹配HTML标签"></a>20、匹配HTML标签</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;\\/?\\w+((\\s+\\w+(\\s*=\\s*(?:&quot;.*?&quot;|&apos;.*?&apos;|[\\^&apos;&quot;&gt;\\s]+))?)+\\s*|\\s*)\\/?&gt;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/27/reg/" data-id="cizobsqlz00058guo8g9jgyl7" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-first" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/02/20/first/" class="article-date">
-  <time datetime="2014-02-20T10:41:51.000Z" itemprop="datePublished">2014-02-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/02/20/first/">Hexo博客搭建教程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Hexo博客搭建"><a href="#Hexo博客搭建" class="headerlink" title="Hexo博客搭建"></a>Hexo博客搭建</h1><p>   本文致力于提供一份足够简单，长期维护的基于Github Pages的Hexo博客搭建教程，希望能有所帮助。当然，我个人的力量是有限的，因此也希望使用Hexo的大家也能一起行动起来，通过提交PR，发布issues或者在下方评论区评论等形式参与到本文档的编辑中来。浏览时，使用Ctrl+F搜索关键词。</p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><ul>
-<li><p>在自己认为合适的地方创建一个文件夹，然后在文件夹空白处按住Shift+鼠标右键，然后点击在此处打开命令行窗口。（同样要记住啦，下文中会使用在当前目录打开命令行来代指上述的操作）<br>在命令行中输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure>
-</li>
-<li><p>可能你会看到一个WARN，但是不用担心，这不会影响你的正常使用。<br> 然后输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo --save</div></pre></td></tr></table></figure>
-</li>
-<li><p>然后你会看到命令行窗口刷了一大堆白字，下面我们来看一看Hexo是不是已经安装好了</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo -v</div></pre></td></tr></table></figure>
-<p>如果你看到了文字，则说明已经安装成功了。</p>
-<h3 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h3><ul>
-<li>接着上面的操作，输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo init</div><div class="line">npm install</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>之后npm将会自动安装你需要的组件，只需要等待npm操作即可。</p>
-<h3 id="初体验Hexo"><a href="#初体验Hexo" class="headerlink" title="初体验Hexo"></a>初体验Hexo</h3><ul>
-<li>继续操作，同样是在命令行中，输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo s</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>然后会提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
-<p>到目前为止，Hexo在本地的配置已经全都结束了。</p>
-<h3 id="如果第二次发布"><a href="#如果第二次发布" class="headerlink" title="如果第二次发布"></a>如果第二次发布</h3><p> 在命令行输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/02/20/first/" data-id="cizobsqll00008guoqwzs03z1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/02/28/react/" data-id="cizoyra0l0003oguoglx0y6yr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -828,9 +846,9 @@ export default UseChildrenComponent;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Arkiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
     </div>
   </div>
 
@@ -838,9 +856,21 @@ export default UseChildrenComponent;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Siste innlegg</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/02/28/first/">Hexo博客搭建教程</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/28/each/">jQuery 遍历函数</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/28/reg/">这20个正则表达式，让你少写1000行代码</a>
+          </li>
         
           <li>
             <a href="/2017/02/28/vue/">轻型MVVM框架Vue.js</a>
@@ -848,18 +878,6 @@ export default UseChildrenComponent;
         
           <li>
             <a href="/2017/02/28/jQuery_ajax/">$.ajax()方法详解</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/28/each/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/28/react/">React基础</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/27/reg/">(no title)</a>
           </li>
         
       </ul>
