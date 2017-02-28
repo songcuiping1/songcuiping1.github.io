@@ -23,7 +23,7 @@
 .children()    获得匹配元素集合中每个元素的所有子元素。
 .closest()    从元素本身开始，逐级向上级元素匹配，并返回最先匹配的祖先元素。
 .contents()    获得匹配元">
-<meta property="og:updated_time" content="2017-02-28T03:18:10.644Z">
+<meta property="og:updated_time" content="2017-02-28T04:33:34.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery 遍历函数">
 <meta name="twitter:description" content="jQuery 遍历函数包括了用于筛选、查找和串联元素的方法。
@@ -84,7 +84,7 @@
         <section id="main"><article id="post-each" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/02/28/each/" class="article-date">
-  <time datetime="2017-02-28T03:18:10.644Z" itemprop="datePublished">2017-02-28</time>
+  <time datetime="2017-02-28T04:33:34.648Z" itemprop="datePublished">2017-02-28</time>
 </a>
     
   </div>
@@ -135,18 +135,13 @@
 <li>.slice()    将匹配元素集合缩减为指定范围的子集。</li>
 </ul>
 <h3 id="each的用法"><a href="#each的用法" class="headerlink" title="each的用法"></a>each的用法</h3><h4 id="1-数组中的each"><a href="#1-数组中的each" class="headerlink" title="1.数组中的each"></a>1.数组中的each</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [ &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;];     </div><div class="line"> $.each(arr, function()&#123;     </div><div class="line">    alert(this);     </div><div class="line"> &#125;);</div></pre></td></tr></table></figure>
-<p>上面这个each输出的结果分别为：one,two,three,four<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var arr1 = [[1, 4, 3], [4, 6, 6], [7, 20, 9]];     </div><div class="line">$.each(arr1, function(i, item)&#123;     </div><div class="line">   alert(item[0]);     </div><div class="line">&#125;); </div><div class="line">```    </div><div class="line">其实arr1为一个二维数组，item相当于取每一个一维数组，   </div><div class="line">item[0]相对于取每一个一维数组里的第一个值   </div><div class="line">所以上面这个each输出分别为：1   4   7</div></pre></td></tr></table></figure></p>
-<p>var obj = { one:1, two:2, three:3, four:4};<br>$.each(obj, function(i) {<br>    alert(obj[i]);<br>});<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">这个each就有更厉害了，能循环每一个属性     </div><div class="line">输出结果为：1   2  3  4 </div><div class="line">#### 2.遍历Dom元素中</div></pre></td></tr></table></figure></p>
-<p><html></html></p>
-<p><head></head></p>
-<p><script type="text/javascript" src="/jquery/jquery.js"></script></p>
-<p><script type="text/javascript"><br>$(document).ready(function(){<br>  $(“button”).click(function(){<br>    $(“li”).each(function(){<br>      alert($(this).text())<br>    });<br>  });<br>});<br></script><br></p>
-<p><body></body></p>
-<p><button>输出每个列表项的值</button></p>
-<p><ul></ul></p>
-<p><li>Coffee</li></p>
-<p><li>Milk</li></p>
-<p><li>Soda</li><br><br><br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">依次弹出Coffee，Milk，Soda</div><div class="line">#### 3.each和map的比较</div><div class="line">each方法：</div><div class="line"></div><div class="line">定义一个空数组，通过each方法，往数组添加ID值；最后将数组转换成字符串后，alert这个值；</div></pre></td></tr></table></figure></p>
+<p>上面这个each输出的结果分别为：one,two,three,four  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var arr1 = [[1, 4, 3], [4, 6, 6], [7, 20, 9]];     </div><div class="line">$.each(arr1, function(i, item)&#123;     </div><div class="line">   alert(item[0]);     </div><div class="line">&#125;); </div><div class="line"></div><div class="line">```  </div><div class="line">  </div><div class="line">其实arr1为一个二维数组，item相当于取每一个一维数组，   </div><div class="line">item[0]相对于取每一个一维数组里的第一个值   </div><div class="line">所以上面这个each输出分别为：1   4   7</div></pre></td></tr></table></figure>
+<p>var obj = { one:1, two:2, three:3, four:4};<br>$.each(obj, function(i) {<br>    alert(obj[i]);<br>});</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">这个each就有更厉害了，能循环每一个属性     </div><div class="line">输出结果为：1   2  3  4 </div><div class="line">#### 2.遍历Dom元素中</div></pre></td></tr></table></figure>
+<html><br><head><br><script type="text/javascript" src="/jquery/jquery.js"></script><br><script type="text/javascript"><br>$(document).ready(function(){<br>  $(“button”).click(function(){<br>    $(“li”).each(function(){<br>      alert($(this).text())<br>    });<br>  });<br>});<br></script><br></head><br><body><br><button>输出每个列表项的值</button><br><ul><br><li>Coffee</li><br><li>Milk</li><br><li>Soda</li><br></ul><br></body><br></html>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">依次弹出Coffee，Milk，Soda</div><div class="line">#### 3.each和map的比较</div><div class="line">each方法：</div><div class="line"></div><div class="line">定义一个空数组，通过each方法，往数组添加ID值；最后将数组转换成字符串后，alert这个值；</div></pre></td></tr></table></figure>
 <p>$(function(){<br>    var arr = [];<br>    $(“:checkbox”).each(function(index){<br>        arr.push(this.id);<br>    });<br>    var str = arr.join(“,”);<br>    alert(str);<br>})</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">map方法:</div><div class="line"></div><div class="line">将每个:checkbox执行return this.id；并将这些返回值，自动的保存为jQuery对象，然后用get方法将其转换成原生Javascript数组，再使用join方法转换成字符串，最后alert这个值；</div></pre></td></tr></table></figure>
 <p>$(function(){<br>    var str = $(“:checkbox”).map(function() {<br>        return this.id;<br>    }).get().join();<br>    alert(str);<br>})</p>
@@ -154,21 +149,37 @@
 <p>$.each( [0,1,2], function(i, n){<br>alert( “Item #” + i + “: “ + n );<br>}); </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">例遍对象，同时使用成员名称和变量内容。（i是成员名称，n是变量内容）</div></pre></td></tr></table></figure>
 <p>$.each( { name: “John”, lang: “JS” }, function(i, n){<br>alert( “Name: “ + i + “, Value: “ + n );<br>}); </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">例遍dom元素，此处以一个input表单元素作为例子。 </div><div class="line">如果你dom中有一段这样的代码 </div><div class="line">&lt;input name=&quot;aaa&quot; type=&quot;hidden&quot; value=&quot;111&quot; /&gt; </div><div class="line">&lt;input name=&quot;bbb&quot; type=&quot;hidden&quot; value=&quot;222&quot; /&gt; </div><div class="line">&lt;input name=&quot;ccc&quot; type=&quot;hidden&quot; value=&quot;333&quot; /&gt; </div><div class="line">&lt;input name=&quot;ddd&quot; type=&quot;hidden&quot; value=&quot;444&quot;/&gt; </div><div class="line">然后你使用each如下</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">例遍dom元素，此处以一个input表单元素作为例子。 </div><div class="line">如果你dom中有一段这样的代码</div></pre></td></tr></table></figure>
+<p><input name="aaa" type="hidden" value="111"> </p>
+<p><input name="bbb" type="hidden" value="222"> </p>
+<p><input name="ccc" type="hidden" value="333"> </p>
+<input name="ddd" type="hidden" value="444"> 
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">然后你使用each如下</div></pre></td></tr></table></figure>
 <p>$.each($(“input:hidden”), function(i,val){<br>alert(val); //输出[object HTMLInputElement]，因为它是一个表单元素。<br>alert(i); //输出索引为0，1，2，3<br>alert(val.name); //输出name的值<br>alert(val.value); //输出value的值<br>}); </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#### 5.each中根据this查找元素</div></pre></td></tr></table></figure>
-<p><ol class="commentlist"><br>    <li class="comment"><br>        <div class="comment-body"><br>          <p>嗨，第一层评论</p><br>          <div class="reply"><br>            <a href="#" class=".comment-reply-link">回复</a><br>          </div><br>        </div><br>        <ul class="children"><br>          <li class="comment"><br>            <div class="comment-body"><br>            <p>第二层评论</p><br>            <div class="reply"><br>              <a href="#" class=".comment-reply-link">回复</a><br>            </div><br>          </div></li><br>        </ul><br>    </li><br></ol><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">js代码</div></pre></td></tr></table></figure></p>
-<p>$(“div.reply”).hover(function(){<br>  $(this).find(“.comment-reply-link”).show();<br>},function(){<br>  $(this).find(“.comment-reply-link”).hide();<br>});<br>```</p>
+<ol class="commentlist"><br>    <li class="comment"><br>        <div class="comment-body"><br>          <p>嗨，第一层评论</p><br>          <div class="reply"><br>            <a href="#" class=".comment-reply-link">回复</a><br>          </div><br>        </div><br>        <ul class="children"><br>          <li class="comment"><br>            <div class="comment-body"><br>            <p>第二层评论</p><br>            <div class="reply"><br>              <a href="#" class=".comment-reply-link">回复</a><br>            </div><br>          </div></li><br>        </ul><br>    </li><br></ol>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">js代码</div></pre></td></tr></table></figure>
+<p>$(“div.reply”).hover(function(){<br>  $(this).find(“.comment-reply-link”).show();<br>},function(){<br>  $(this).find(“.comment-reply-link”).hide();<br>});</p>
+<p>```</p>
 <h4 id="6-官方解释"><a href="#6-官方解释" class="headerlink" title="6.官方解释"></a>6.官方解释</h4><p>jQuery.each(object, [callback]) </p>
-<p>概述<br>通用例遍方法，可用于例遍对象和数组。 </p>
+<ul>
+<li>概述<br>通用例遍方法，可用于例遍对象和数组。 </li>
+</ul>
 <p>不同于例遍 jQuery 对象的 $().each() 方法，此方法可用于例遍任何对象。回调函数拥有两个参数：第一个为对象的成员或数组的索引，第二个为对应变量或内容。如果需要退出 each 循环可使回调函数返回 false，其它返回值将被忽略。 </p>
-<p>参数<br>objectObject<br>需要例遍的对象或数组。 </p>
-<p>callback (可选)Function<br>每个成员/元素执行的回调函数。</p>
+<ul>
+<li><p>参数<br>objectObject<br>需要例遍的对象或数组。 </p>
+</li>
+<li><p>callback (可选)Function<br>每个成员/元素执行的回调函数。</p>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/28/each/" data-id="cizoyra020000oguoy3rerusr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/02/28/each/" data-id="cizp1g71i000070uoo9dpydz4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,20 +188,15 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/02/28/first/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/02/28/jQuery_ajax/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Hexo博客搭建教程
+          $.ajax()方法详解
         
       </div>
     </a>
   
-  
-    <a href="/2017/02/28/reg/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">这20个正则表达式，让你少写1000行代码</div>
-    </a>
   
 </nav>
 
@@ -226,23 +232,11 @@
       <ul>
         
           <li>
-            <a href="/2017/02/28/first/">Hexo博客搭建教程</a>
+            <a href="/2017/02/28/jQuery_ajax/">$.ajax()方法详解</a>
           </li>
         
           <li>
             <a href="/2017/02/28/each/">jQuery 遍历函数</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/28/reg/">这20个正则表达式，让你少写1000行代码</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/28/vue/">轻型MVVM框架Vue.js</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/28/jQuery_ajax/">$.ajax()方法详解</a>
           </li>
         
       </ul>
